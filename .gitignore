@@ -1,0 +1,68 @@
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+.idea
+.idea/*
+.idea/Django-Tutorial.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+music/__pycache__/__init__.cpython-36.pyc
+music/__pycache__/admin.cpython-36.pyc
+music/__pycache__/apps.cpython-36.pyc
+music/__pycache__/forms.cpython-36.pyc
+music/__pycache__/models.cpython-36.pyc
+music/__pycache__/urls.cpython-36.pyc
+music/__pycache__/views.cpython-36.pyc
+music/migrations/__pycache__/0001_initial.cpython-36.pyc
+music/migrations/__pycache__/0002_song_is_favorite.cpython-36.pyc
+music/migrations/__pycache__/0003_auto_20170222_1301.cpython-36.pyc
+music/migrations/__pycache__/__init__.cpython-36.pyc
+website/__pycache__/
+*.pyc
+__pycache__
+db.sqlite3

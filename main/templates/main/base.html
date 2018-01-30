@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Blog.me{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}">
+    <script src="{% static 'main/js/jquery.min.js' %}"></script>
+    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand logo" href="{% url 'main:index' %}">
+          Blog.me
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#" class="">Home</a></li>
+        <li><a href="https://github.com/MrJackJones">GitHub</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+          {% if user.is_authenticated %}
+                    <li><a href="{% url 'main:create' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> Добавить пост</a></li>
+                    <li><a href="{% url 'main:logout' %}"  class="top-menu"><span class="glyphicon glyphicon-log-in"></span> Выход</a></li>
+          {% else %}
+                    <li><a href="{% url 'main:register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="{% url 'main:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          {% endif %}
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 menu">
+        </div>
+        <div class="col-md-9">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{%  extends 'main/base.html' %}
+
+{% block body %}
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <div class="g-recaptcha" data-sitekey="6LfMChcUAAAAAHCMuwf3tidPBi3JQy3A33rmouB4"></div>
+
+         <button type="submit" class="btn btn-primary">Войти</button>
+
+    </form>
+
+{% endblock %}

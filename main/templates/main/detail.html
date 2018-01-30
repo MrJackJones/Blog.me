@@ -1,0 +1,19 @@
+{%  extends 'main/base.html' %}
+
+{% block title %}{{ post }}{% endblock %}
+{% block body %}
+
+        <p><strong>{{ post.title }}</strong></p>
+        <p><strong> Автор: </strong> {{ post.author }}</p>
+        <p><strong> Дата создания: </strong> {{ post.created_date }}</p>
+        <p>{{ post.post }}</p>
+        <img src="{{ post.image.url }}" class="image_post img-responsive" />
+    {% if user.is_authenticated and post.author == user %}
+        <a href="{% url 'main:update' post.id %}" class="updateButton"><button class="button_update glyphicon glyphicon-edit"><span></span> Изменить</button></a>
+        <form action="{% url 'main:delete' post.id %}" method="post">
+        {% csrf_token %}
+        <button class="button_delete glyphicon glyphicon-remove"><span> Удалить</span></button>
+        </form>
+    {% else %}
+    {% endif %}
+{% endblock %}
